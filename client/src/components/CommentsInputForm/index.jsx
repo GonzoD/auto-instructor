@@ -26,7 +26,10 @@ const useStyles = makeStyles((theme) => ({
         alignSelf: 'center',
         margin: '2% 0',
         fontWeight: 'bold',
-        fontSize: '15px'
+        fontSize: '15px',
+        '&:hover': {
+            background: '#e0e0e0'
+        },
     },
     buttonMobile: {
         width: '200px',
@@ -64,7 +67,7 @@ const CommentsInputForm = (props) => {
           commentText: '',
         },
         onSubmit: (values) => {
-            props.onSubmit(values.name, values.commentText)
+            props.onClick(values.name, values.commentText)
         }
       });
 
@@ -77,7 +80,7 @@ const CommentsInputForm = (props) => {
             <Typography className={`${classes.headText} ${isTabletOrMobile && classes.headTextMobile}`}>Отзыв</Typography>
             <CommentsInput style={classes.textInput} rows={8} maxLength={400} value={formik.values.commentText} onChange={formik.handleChange} name="commentText" fullWidth={true}/>
         </div>
-        <Button className={`${classes.button} ${isTabletOrMobile && classes.buttonMobile}`} onClick={props.onClick} type='submit'>Создать комментарий</Button>
+        <Button className={`${classes.button} ${isTabletOrMobile && classes.buttonMobile}`} onClick={() => {}} type='submit'>Создать комментарий</Button>
     </form>
 }
 

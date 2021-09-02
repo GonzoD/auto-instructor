@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import CommentsInputForm from '../components/CommentsInputForm';
 import {observer} from 'mobx-react-lite'
@@ -46,23 +46,20 @@ const useStyles = makeStyles((theme) => ({
 const CommentsPage = observer(() => {
     const classes = useStyles()
     const {comment} = useContext(Context)
-    const [name, setName] = useState('')
-    const [textComment, setTextComment] = useState('')
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-    const getHandleDataClick = (name, commentText) => {
-        setName(name)
-        setTextComment(commentText)
-     }
-
-    const postHandleDataClick = async () => {
-        const response = await createComments(name, textComment)
-        console.log(response)
+    const postHandleDataClick = async (name, textComment) => {
+        try {
+            const response = await createComments(name, textComment).then(() => window.location.reload())
+            return response
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     useEffect(() => {
         getComments().then(data => comment.setComments(data))
-    }, [name, textComment, comment])
+    }, [comment])
 
     return <div className={classes.root}>
         <Typography className={`${classes.header} ${isTabletOrMobile && classes.headerMobile}`}>Комментарии учеников</Typography>
@@ -72,7 +69,7 @@ const CommentsPage = observer(() => {
                <Typography className={classes.text} >{item.text}</Typography>
                </div>
         })}
-        <CommentsInputForm onSubmit={getHandleDataClick} onClick={postHandleDataClick}/>
+        <CommentsInputForm onClick={postHandleDataClick}/>
     </div>
 })
 

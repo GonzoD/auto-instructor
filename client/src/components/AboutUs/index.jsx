@@ -21,11 +21,9 @@ const useStyles = makeStyles(() => ({
         width: '941px',
     },
     "@keyframes moveTrees": {
-        "0%": {
-            transform: 'translateX(0px)'
-        },
         "100%": {
-            transform: 'translateX(-1200px)'
+            willChange: 'transform',
+            transform: 'translateX(-15%)',
         }
     },
     "@keyframes moveWindow": {
@@ -51,21 +49,23 @@ const useStyles = makeStyles(() => ({
     background: {
         display: 'block',
         backgroundImage: 'url(trees.jpg)',
-        animation: '$moveTrees 1s linear infinite',
-        backgroundRepeat: 'repeat',
+        willChange: 'transform',
+        animation: '$moveTrees 5s linear infinite',
+        backgroundRepeat: 'repeat-x',
         zIndex: 1,
     },
     backgroundBigScreen: {
-        width: '1500%',
+        width: '2800%',
+        backgroundSize: 'contain'
     },
     backgroundMobile: {
-        width: '1500%',
+        width: '2000%',
         height: '343px',
         backgroundSize: 'contain'
     },
     blur: {
         backdropFilter: 'blur(3px)',
-        width: '1500%',
+        width: '400%',
         height: '600px',
     },
     window: {

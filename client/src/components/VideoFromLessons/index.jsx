@@ -28,9 +28,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const CardRow = [{youtubeURL: 'https://www.youtube.com/embed/GhCXAiNz9Jo'}, 
-{youtubeURL: 'https://www.youtube.com/embed/Vil17UAogoU'}, 
-{youtubeURL: 'https://www.youtube.com/embed/vc6vs-l5dkc'}]
+const CardRow = [{youtubeURL: 'https://www.youtube.com/embed/A00FdY8oAqY'}]
 
 const VideoFromLessons = (props) => {
     const classes = useStyles()
