@@ -74,6 +74,7 @@ const useStyles = makeStyles(() => ({
         animationFillMode: 'forwards'
     },
     camryMobile: {
+        imageRendering: 'optimizeSpeed',
         width: '35px',
         height: '25px',
         bottom: '130px',
