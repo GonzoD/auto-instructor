@@ -56,22 +56,25 @@ const useStyles = makeStyles(() => ({
     backgroundBigScreen: {
         width: '2800%',
         backgroundSize: 'contain',
+        animationDelay: '2.5s',
         animation: '$moveTrees 4s linear infinite',
     },
     backgroundMobile: {
         width: '2000%',
         height: '343px',
         backgroundSize: 'contain',
+        animationDelay: '2.5s',
         animation: '$moveTrees 4s linear infinite',
     },
     blur: {
-        backdropFilter: 'blur(3px)',
+        backdropFilter: 'blur(2px)',
         width: '400%',
         height: '600px',
     },
     window: {
         position: 'absolute',
         background: 'url(window.png)',
+        animationDelay: '3s',
         animation: '$moveWindow 3s linear infinite',
     },
     windowBigScreen: {

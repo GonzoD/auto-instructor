@@ -32,9 +32,6 @@ const useStyles = makeStyles(() => ({
         }
     },
     "@keyframes appearHead": {
-        '0%': {
-            opacity: 0,
-        },
         '50%': {
             transform: 'translateY(-50px)',
             opacity: 0,
@@ -71,7 +68,7 @@ const useStyles = makeStyles(() => ({
         right: '47.5%',
         backgroundSize: 'contain',
         animation: '$moveCamryBigScreen 2s linear',
-        animationFillMode: 'forwards'
+        animationFillMode: 'forwards',
     },
     camryMobile: {
         imageRendering: 'high-quality',
@@ -81,7 +78,7 @@ const useStyles = makeStyles(() => ({
         right: '44%',
         backgroundSize: 'contain',
         animation: '$moveCamryMobile 2s linear',
-        animationFillMode: 'forwards'
+        animationFillMode: 'forwards',
     },
     introText: {
         display: 'flex',
@@ -90,7 +87,10 @@ const useStyles = makeStyles(() => ({
         width: '80%'
     },
     greeting: {
-        animation: '$appearHead 2s linear',
+        opacity: 0,
+        animationDelay: '1.5s',
+        animation: '$appearHead 1s linear',
+        animationFillMode: 'forwards',
         fontFamily: 'Arial, sans-serif',
         fontWeight: 800,
         color: 'white'
@@ -114,7 +114,10 @@ const useStyles = makeStyles(() => ({
         marginTop: '15%',
         color: 'white',
         background: '#1C2128',
-        animation: '$appearHead 2s linear',
+        opacity: 0,
+        animationDelay: '1.5s',
+        animation: '$appearHead 1s linear',
+        animationFillMode: 'forwards',
         fontWeight: 'bold'
     },
     buttonBigScreen:{fontSize: '20px', height: '50px',},
