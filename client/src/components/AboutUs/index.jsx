@@ -50,18 +50,19 @@ const useStyles = makeStyles(() => ({
         display: 'block',
         backgroundImage: 'url(trees.jpg)',
         willChange: 'transform',
-        animation: '$moveTrees 5s linear infinite',
         backgroundRepeat: 'repeat-x',
         zIndex: 1,
     },
     backgroundBigScreen: {
         width: '2800%',
-        backgroundSize: 'contain'
+        backgroundSize: 'contain',
+        animation: '$moveTrees 4s linear infinite',
     },
     backgroundMobile: {
         width: '2000%',
         height: '343px',
-        backgroundSize: 'contain'
+        backgroundSize: 'contain',
+        animation: '$moveTrees 4s linear infinite',
     },
     blur: {
         backdropFilter: 'blur(3px)',
