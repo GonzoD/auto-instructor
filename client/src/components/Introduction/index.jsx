@@ -19,11 +19,16 @@ const useStyles = makeStyles(() => ({
         height: '910px',
     },
     rootMobile: {
-        height: '395px',
+        height: '310px',
     },
-    "@keyframes moveCamry": {
+    "@keyframes moveCamryBigScreen": {
         "100%": {
             transform: 'translateY(1%) scale(8)',
+        }
+    },
+    "@keyframes moveCamryMobile": {
+        "100%": {
+            transform: 'translateY(70px) scale(7)',
         }
     },
     "@keyframes appearHead": {
@@ -58,22 +63,24 @@ const useStyles = makeStyles(() => ({
     camry: {
         background: 'url(camry.png)',
         position: 'absolute',
-        animation: '$moveCamry 2s linear',
-        animationFillMode: 'forwards'
     },
     camryBigScreen: {
         width: '70px',
         height: '50px',
-        bottom: '120px',
-        right: '48%',
+        bottom: '130px',
+        right: '47.5%',
         backgroundSize: 'contain',
+        animation: '$moveCamryBigScreen 2s linear',
+        animationFillMode: 'forwards'
     },
     camryMobile: {
-        width: '50px',
-        height: '35px',
-        bottom: '100px',
+        width: '35px',
+        height: '25px',
+        bottom: '130px',
         right: '44%',
         backgroundSize: 'contain',
+        animation: '$moveCamryMobile 2s linear',
+        animationFillMode: 'forwards'
     },
     introText: {
         display: 'flex',
@@ -85,13 +92,14 @@ const useStyles = makeStyles(() => ({
         animation: '$appearHead 2s linear',
         fontFamily: 'Arial, sans-serif',
         fontWeight: 800,
-        textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897',
         color: 'white'
     },
-    greetingBigScreen:{fontSize: '60px',},
+    greetingBigScreen:{fontSize: '60px',
+    textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897',
+    },
     greetingMobile:{
-        fontSize: '19px',
-        textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a',
+        fontSize: '17px',
+        textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777',
     },
     intro: {
         color: 'white',

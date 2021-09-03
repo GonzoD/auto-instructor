@@ -28,7 +28,7 @@ const ImageWrapper = (props) => {
     return (
     <div className={`${classes.root} ${props.className}`}>
         <Typography className={`${classes.header} ${isTabletOrMobile && classes.headerMobile}`}>Фото с уроков</Typography>
-        <SimpleImageSlider  width={isTabletOrMobile ? 380 : 900} height={isTabletOrMobile ? 200 : 400} images={props.imgItems} showBullets={true} showNavs={true}/>
+        <SimpleImageSlider  width={isTabletOrMobile ? 300 : 900} height={isTabletOrMobile ? 200 : 400} images={props.imgItems} showBullets={true} showNavs={true}/>
     </div>
   );
 }

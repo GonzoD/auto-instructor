@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '10px 10px'
     },
     commentMobile: {
-        width: '450px',
+        width: '95%',
     },
     name: {
         color: '#30D171',

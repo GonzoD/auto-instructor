@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '2%'
     },
     rootMobile: {
-        width: '450px'
+        width: '90%'
     },
     button: {
         width: '250px',
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         width: '740px'
     },
     reviewMobile: {
-        width: '440px'
+        width: '90%'
     },
 }))
 

@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '12px'
     },
     header: {
-        marginBottom: '30px',
+        marginBottom: '5%',
         fontSize: '35px',
         fontWeight: 'bold'   
     },
@@ -28,6 +28,9 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'space-between',
         width: '50%',
+    },
+    contactsMobile: {
+       flexDirection: 'column', 
     },
     contactBox: {
         display: 'flex',
@@ -40,8 +43,7 @@ const useStyles = makeStyles(() => ({
     },
     buttonBigScreen:{fontSize: '20px', height: '50px',},
     buttonMobile:{fontSize: '10px', height: '20px',
-    display: 'flex', 
-    alignSelf: 'flex-start'},
+    display: 'flex'},
     mailButton: {
         color: '#30D171',
         textTransform: 'none',
@@ -61,7 +63,7 @@ const Contacts = () => {
 
     return <div id='contacts' className={classes.root}>
         <Typography className={`${classes.header} ${isTabletOrMobile && classes.headerMobile}`}>Контакты автоинструктора</Typography>
-        <div className={classes.contacts}>
+        <div className={`${classes.contacts} ${isTabletOrMobile && classes.contactsMobile}`}>
         <div className={classes.contactBox}>
             <Typography className={`${isTabletOrMobile ? classes.textMobile : classes.textBigScreen}`}>Мой номер</Typography>
             <ColorButton text={number} style={`${classes.button} ${isTabletOrMobile ? classes.buttonMobile : classes.buttonBigScreen}`} onClick={() => handleCopy(number)}/>

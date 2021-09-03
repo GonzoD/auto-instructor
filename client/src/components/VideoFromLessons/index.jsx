@@ -14,7 +14,11 @@ const useStyles = makeStyles(() => ({
     header: {
         fontSize: '40px',
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
+    },
+    headerMobile: {
+        fontSize: '30px',
     },
     cardRow: {
         display: 'flex',
@@ -35,7 +39,7 @@ const VideoFromLessons = (props) => {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     return <div id='advantages' className={`${classes.root} ${props.className}`}>
-        <Typography className={classes.header}>Видео с уроков</Typography>
+        <Typography className={`${classes.header} ${isTabletOrMobile && classes.headerMobile}`}>Видео с уроков</Typography>
         <div className={`${classes.cardRow} ${isTabletOrMobile && classes.cardColumn}`}>{CardRow.map((item, index) => (<VideoCard key={index} className={classes.box} youtubeURL={item.youtubeURL}/>))}</div>   
     </div>
 }
