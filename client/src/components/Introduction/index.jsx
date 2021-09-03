@@ -27,8 +27,11 @@ const useStyles = makeStyles(() => ({
         }
     },
     "@keyframes moveCamryMobile": {
+        "0%": {
+            transform: 'scale(.1)'
+        },
         "100%": {
-            transform: 'translateY(170%) scale(7)',
+            transform: 'translateY(30%) scale(1)',
         }
     },
     "@keyframes appearHead": {
@@ -72,10 +75,10 @@ const useStyles = makeStyles(() => ({
     },
     camryMobile: {
         imageRendering: 'high-quality',
-        width: '13%',
-        height: '9%',
-        bottom: '130px',
-        right: '44%',
+        width: '220px',
+        height: '150px',
+        bottom: '60px',
+        right: '17%',
         backgroundSize: 'contain',
         animation: '$moveCamryMobile 2s linear',
         animationFillMode: 'forwards',
