@@ -22,15 +22,21 @@ const useStyles = makeStyles(() => ({
         height: '310px',
     },
     "@keyframes moveCamryBigScreen": {
+        "0%": {
+            opacity: 1
+        },
         "100%": {
+            opacity: 1,
             transform: 'translateY(1%) scale(8)',
         }
     },
     "@keyframes moveCamryMobile": {
         "0%": {
-            transform: 'scale(.1)'
+            transform: 'scale(.1)',
+            opacity: 1
         },
         "100%": {
+            opacity: 1,
             transform: 'translateY(30%) scale(1)',
         }
     },
@@ -65,21 +71,25 @@ const useStyles = makeStyles(() => ({
         position: 'absolute',
     },
     camryBigScreen: {
+        opacity: 0,
         width: '70px',
         height: '50px',
         bottom: '130px',
         right: '47.5%',
         backgroundSize: 'contain',
+        animationDelay: '200ms',
         animation: '$moveCamryBigScreen 2s linear',
         animationFillMode: 'forwards',
     },
     camryMobile: {
+        opacity: 0,
         imageRendering: 'high-quality',
         width: '220px',
         height: '150px',
         bottom: '60px',
         right: '17%',
         backgroundSize: 'contain',
+        animationDelay: '200ms',
         animation: '$moveCamryMobile 2s linear',
         animationFillMode: 'forwards',
     },

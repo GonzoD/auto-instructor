@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         width: '740px'
     },
     reviewMobile: {
-        width: '90%'
+        width: '97%',
     },
 }))
 
