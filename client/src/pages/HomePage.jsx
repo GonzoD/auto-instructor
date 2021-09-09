@@ -48,7 +48,7 @@ function App() {
         <AboutUs className={classes.componentsBackground}/>
         <Program className={classes.componentsBackground}/>
         <ImageWrapper className={classes.componentsBackground} imgItems={imgItems}/>
-        <VideoFromLessons className={classes.componentsBackground}/>
+        {/* <VideoFromLessons className={classes.componentsBackground}/> */}
       </div>
       <Contacts />
     </div>
