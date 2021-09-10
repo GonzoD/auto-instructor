@@ -62,8 +62,8 @@ const useStyles = makeStyles(() => ({
         '100%': {
             transform: 'translateY(0)',
             opacity: 1,
-           webkitClipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 5%)',
-           clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 5%)',
+           webkitClipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 0%)',
+           clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 0%)',
     },
 },
     camry: {
@@ -106,13 +106,14 @@ const useStyles = makeStyles(() => ({
         animationFillMode: 'forwards',
         fontFamily: 'Arial, sans-serif',
         fontWeight: 800,
-        color: 'white'
+        color: 'white',
+        margin: '2% 0'
     },
-    greetingBigScreen:{fontSize: '60px',
+    greetingBigScreen:{fontSize: '55px',
     textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897',
     },
     greetingMobile:{
-        fontSize: '17px',
+        fontSize: '15px',
         textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777',
     },
     intro: {
@@ -147,7 +148,7 @@ const Introduction = (props) => {
         </div>
         <div className={classes.introText}>
             <Typography className={`${classes.greeting} ${isTabletOrMobile? classes.greetingMobile: classes.greetingBigScreen}`}>Меня зовут Виталий</Typography>
-            <Typography className={`${classes.greeting} ${isTabletOrMobile? classes.greetingMobile: classes.greetingBigScreen}`}>Я научу вас водить автомобиль</Typography>
+            <Typography className={`${classes.greeting} ${isTabletOrMobile? classes.greetingMobile: classes.greetingBigScreen}`}>Я научу вас управлять автомобилем на профессиональном уровне</Typography>
         </div>
         <ColorButton text={number} style={`${classes.button} ${isTabletOrMobile? classes.buttonMobile: classes.buttonBigScreen}`} onClick={() => handleCopy(number)}/>
     </div>
