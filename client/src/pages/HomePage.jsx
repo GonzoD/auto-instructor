@@ -37,7 +37,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const imgItems = [{url: "fromLesson1.jpg"}, {url: "fromLesson2.jpg"}, {url: "fromLesson3.jpg"}]
+const imgItems = [{url: "fromLesson4.jpg"}, {url: "fromLesson1.jpg"}, {url: "fromLesson2.jpg"}, {url: "fromLesson3.jpg"}]
 
 function App() {
   const classes = useStyles()
