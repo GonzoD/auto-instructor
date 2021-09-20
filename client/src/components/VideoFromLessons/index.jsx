@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        paddingTop: '20px'
+        paddingTop: '20px',
     },
     header: {
         fontSize: '40px',
@@ -28,17 +28,17 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column'
     },
     box: {
-        margin: '15px 15px'
+        margin: '15px 80px'
     },
 }));
 
-const CardRow = [{youtubeURL: 'https://www.youtube.com/embed/A00FdY8oAqY'}]
+const CardRow = [{youtubeURL: 'https://www.youtube.com/embed/QtzIXrrHgLU'}, {youtubeURL: 'https://www.youtube.com/embed/FezJM9xinPA'}]
 
 const VideoFromLessons = (props) => {
     const classes = useStyles()
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-    return <div id='advantages' className={`${classes.root} ${props.className}`}>
+    return <div id='advantages' className={`${classes.root} ${props.className} ${isTabletOrMobile && classes.rootMobile}`}>
         <Typography className={`${classes.header} ${isTabletOrMobile && classes.headerMobile}`}>Видео с уроков</Typography>
         <div className={`${classes.cardRow} ${isTabletOrMobile && classes.cardColumn}`}>{CardRow.map((item, index) => (<VideoCard key={index} className={classes.box} youtubeURL={item.youtubeURL}/>))}</div>   
     </div>

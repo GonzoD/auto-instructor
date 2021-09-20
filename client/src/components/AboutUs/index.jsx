@@ -134,7 +134,7 @@ const useStyles = makeStyles(() => ({
         fontWeight: 900
     },
     fromProMobile: {
-        fontSize: '30px',
+        fontSize: '25px',
         top: '80%',
         left: '3%',
         fontWeight: 900

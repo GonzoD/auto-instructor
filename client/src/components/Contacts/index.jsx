@@ -58,7 +58,7 @@ const useStyles = makeStyles(() => ({
 const Contacts = () => {
     const classes = useStyles()
     const [handleCopy] = useCopyToClipboard();
-    const mail = 'vitaliy.auto.instructor@gmail.com'
+    const mail = 'auto.vitaly.reznikov@gmail.com'
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     return <div id='contacts' className={classes.root}>

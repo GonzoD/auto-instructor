@@ -11,15 +11,22 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         background: 'url(road.jpg)',
         backgroundSize: '100%',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         padding: '3% 5%',
         position: 'relative',
+    },
+    bodyIntro: {
+        display: 'flex',
+        justifyContent: 'center'
     },
     rootBigScreen: {
         height: '910px',
     },
     rootMobile: {
-        height: '310px',
+        maxHeight: '310px',
+        minHeight: '305px',
+        width: '300px',
+        backgroundRepeat: 'no-repeat'
     },
     "@keyframes moveCamryBigScreen": {
         "0%": {
@@ -27,7 +34,7 @@ const useStyles = makeStyles(() => ({
         },
         "100%": {
             opacity: 1,
-            transform: 'translateY(1%) scale(8)',
+            transform: 'translateY(.5%) scale(8)',
         }
     },
     "@keyframes moveCamryMobile": {
@@ -96,7 +103,7 @@ const useStyles = makeStyles(() => ({
     introText: {
         display: 'flex',
         flexDirection: 'column',
-        marginTop: '10%',
+        marginTop: '2%',
         width: '80%'
     },
     greeting: {
@@ -122,20 +129,33 @@ const useStyles = makeStyles(() => ({
         fontSize: '20px',
         backgroundColor: '#3d4961',
     },
-    introBigScreen:{fontSize: '20px',},
-    introMobile:{fontSize: '11px'},
-    button: {
-        marginTop: '15%',
-        color: 'white',
-        background: '#1C2128',
+    photoBox: {
+        paddingTop: '2%'
+    },
+    selfImg: {
+        objectFit: 'cover',
         opacity: 0,
         animationDelay: '1.5s',
         animation: '$appearHead 1s linear',
         animationFillMode: 'forwards',
-        fontWeight: 'bold'
     },
-    buttonBigScreen:{fontSize: '20px', height: '50px',},
-    buttonMobile:{fontSize: '10px', height: '20px',},
+    selfImgBigScreen: {
+        width: '500px'
+    },
+    selfImgMobile: {
+        width: '100px'
+    },
+    button: {
+        color: 'black',
+        background: '#30D171',
+        opacity: 0,
+        animationDelay: '1.5s',
+        animation: '$appearHead 1s linear',
+        animationFillMode: 'forwards',
+        fontWeight: 'bold',
+    },
+    buttonBigScreen:{fontSize: '25px', height: '60px', width: '200px'},
+    buttonMobile:{fontSize: '10px', height: '20px', width: '70px'},
 }));
 
 const Introduction = (props) => {
@@ -143,14 +163,18 @@ const Introduction = (props) => {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
     const [handleCopy] = useCopyToClipboard();
 
-    return <div id='intro' className={`${classes.root} ${props.className} ${isTabletOrMobile ? classes.rootMobile : classes.rootBigScreen}`}>
-        <div className={`${classes.camry} ${isTabletOrMobile ? classes.camryMobile : classes.camryBigScreen}`}>
-        </div>
+    return <div className={classes.bodyIntro}> 
+    <div id='intro' className={`${classes.root} ${props.className} ${isTabletOrMobile ? classes.rootMobile : classes.rootBigScreen}`}>
+        <div className={`${classes.camry} ${isTabletOrMobile ? classes.camryMobile : classes.camryBigScreen}`}></div>
         <div className={classes.introText}>
             <Typography className={`${classes.greeting} ${isTabletOrMobile? classes.greetingMobile: classes.greetingBigScreen}`}>Меня зовут Виталий</Typography>
-            <Typography className={`${classes.greeting} ${isTabletOrMobile? classes.greetingMobile: classes.greetingBigScreen}`}>Я научу вас управлять автомобилем на профессиональном уровне</Typography>
+            <Typography className={`${classes.greeting} ${isTabletOrMobile? classes.greetingMobile: classes.greetingBigScreen}`}>Я научу вас управлять авто на профессиональном уровне</Typography>
+            <ColorButton text={number} style={`${classes.button} ${isTabletOrMobile? classes.buttonMobile: classes.buttonBigScreen}`} onClick={() => handleCopy(number)}/>
         </div>
-        <ColorButton text={number} style={`${classes.button} ${isTabletOrMobile? classes.buttonMobile: classes.buttonBigScreen}`} onClick={() => handleCopy(number)}/>
+        <div className={classes.photoBox}>
+        <img src="selfPhotoPNG.png" className={`${classes.selfImg} ${isTabletOrMobile ? classes.selfImgMobile: classes.selfImgBigScreen}`}></img>
+        </div>
+    </div>
     </div>
 }
 

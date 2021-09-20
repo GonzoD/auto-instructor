@@ -19,6 +19,7 @@ const useStyles = makeStyles(() => ({
     },
     imgMobile: {
         height: '250px',
+        width: '280px'
     },
     imgBigScreen: {
         height: '300px',

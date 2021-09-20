@@ -6,6 +6,7 @@ import AboutUs from '../components/AboutUs';
 import VideoFromLessons from '../components/VideoFromLessons';
 import Contacts from '../components/Contacts';
 import ImageWrapper from '../components/ImageWrapper';
+import TrainingForAutoSchool from '../components/TrainingForAutoSchool';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -33,11 +34,11 @@ const useStyles = makeStyles(() => ({
   },
   componentsBackground: {
     background: '#1C2128',
-    marginTop: '20px'
+    marginTop: '20px',
   }
 }));
 
-const imgItems = [{url: "fromLesson4.jpg"}, {url: "fromLesson1.jpg"}, {url: "fromLesson2.jpg"}, {url: "fromLesson3.jpg"}]
+const imgItems = [{url: "fromLesson4.jpg"}, {url: "fromLesson1.jpg"}, {url: "fromLesson2.jpg"}, {url: "fromLesson3.jpg"}, {url: "fromLesson5.jpg"}]
 
 function App() {
   const classes = useStyles()
@@ -45,10 +46,11 @@ function App() {
     <div className={classes.root}>
       <div className={classes.content}>
       <Introduction className={classes.intro}/>
+      <TrainingForAutoSchool />
         <AboutUs className={classes.componentsBackground}/>
         <Program className={classes.componentsBackground}/>
         <ImageWrapper className={classes.componentsBackground} imgItems={imgItems}/>
-        {/* <VideoFromLessons className={classes.componentsBackground}/> */}
+        <VideoFromLessons className={classes.componentsBackground}/>
       </div>
       <Contacts />
     </div>

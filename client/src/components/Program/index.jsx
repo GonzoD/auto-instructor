@@ -37,9 +37,6 @@ const useStyles = makeStyles(() => ({
 
 const TopLineRow = [{img: 'program1.jpg', text: 'Обучение с нуля'}, 
 {img: 'program2.jpg', text: 'Все возможные виды парковки'}, 
-{img: 'program3.jpg', text: 'Езда в темное время суток'}]
-const BottomLineRow = [{img: 'program4.jpg', text: 'Езда в городе'}, 
-{img: 'program5.jpg', text: 'Езда по трассе'}, 
 {img: 'program6.jpg', text: 'Круговое движение'}]
 
 const Program = (props) => {
@@ -49,7 +46,6 @@ const Program = (props) => {
     return <div id='program' className={`${classes.root} ${props.className}`}>
         <Typography className={`${classes.header} ${isTabletOrMobile ? classes.headerMobile : classes.headerBigScreen}`}>Программа обучения</Typography>
         <div className={`${classes.lineRow} ${isTabletOrMobile && classes.lineColumn}`}>{TopLineRow.map((item, index) => (<ImageCard key={`${index}T`} className={classes.box} img={item.img} textImg={item.text}/>))}</div>
-        <div className={`${classes.lineRow} ${isTabletOrMobile && classes.lineColumn}`}>{BottomLineRow.map((item, index) => (<ImageCard key={`${index}B`} className={classes.box}  img={item.img} textImg={item.text}/>))}</div>    
     </div>
 }
 
