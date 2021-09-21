@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
         background: 'url(road.jpg)',
         backgroundSize: '100%',
         justifyContent: 'center',
-        padding: '3% 5%',
+        padding: '3% 1%',
         position: 'relative',
     },
     bodyIntro: {
@@ -91,10 +91,9 @@ const useStyles = makeStyles(() => ({
     camryMobile: {
         opacity: 0,
         imageRendering: 'high-quality',
-        width: '220px',
-        height: '150px',
+        width: '200px',
+        height: '130px',
         bottom: '60px',
-        right: '17%',
         backgroundSize: 'contain',
         animationDelay: '200ms',
         animation: '$moveCamryMobile 2s linear',
@@ -120,7 +119,7 @@ const useStyles = makeStyles(() => ({
     textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897',
     },
     greetingMobile:{
-        fontSize: '15px',
+        fontSize: '13px',
         textShadow: '1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777',
     },
     intro: {
@@ -143,7 +142,7 @@ const useStyles = makeStyles(() => ({
         width: '500px'
     },
     selfImgMobile: {
-        width: '100px'
+        width: '150px'
     },
     button: {
         color: 'black',
@@ -172,7 +171,7 @@ const Introduction = (props) => {
             <ColorButton text={number} style={`${classes.button} ${isTabletOrMobile? classes.buttonMobile: classes.buttonBigScreen}`} onClick={() => handleCopy(number)}/>
         </div>
         <div className={classes.photoBox}>
-        <img src="selfPhotoPNG.png" className={`${classes.selfImg} ${isTabletOrMobile ? classes.selfImgMobile: classes.selfImgBigScreen}`}></img>
+        <img src="selfPhotoPNG.png" alt='self' className={`${classes.selfImg} ${isTabletOrMobile ? classes.selfImgMobile: classes.selfImgBigScreen}`}></img>
         </div>
     </div>
     </div>
